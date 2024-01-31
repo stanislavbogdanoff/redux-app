@@ -1,13 +1,13 @@
 import MinusBtn from "./MinusBtn";
+import { useDispatch } from "react-redux";
 
-const Buttons = ({ handleChangeCounter, counterProps }) => {
+const Buttons = () => {
+  const dispatch = useDispatch();
+
   return (
     <div>
-      <button onClick={() => handleChangeCounter(counterProps + 1)}>+1</button>
-      <MinusBtn
-        handleChangeCounter={handleChangeCounter}
-        counterProps={counterProps}
-      />
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>+1</button>
+      <MinusBtn />
     </div>
   );
 };
